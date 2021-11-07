@@ -39,8 +39,6 @@ public class SoftEntity extends Dictionary {
 
     private Dictionary[] languages;
     private Dictionary[] developers;
-    private String price;
-    private Double rating;
 
     public SoftEntity() {
         super(0, "");
@@ -49,46 +47,19 @@ public class SoftEntity extends Dictionary {
         this.categories = null;
         this.languages = null;
         this.developers = null;
-        this.price = "";
-        this.rating = 0d;
-
     }
 
-    public SoftEntity(int id, String name, Dictionary[] platforms,
-                      Dictionary[] languages, Dictionary[] developers, String price, Double rating) {
+    public SoftEntity(int id, String name, Dictionary[] categories, Dictionary[] platforms,
+                      Dictionary[] languages, Dictionary[] developers) {
         super(id, name);
         this.platforms = platforms;
+        this.categories = categories;
         this.languages = languages;
+         this.developers = developers;
+    }
+
+    public void setDevelopers(DeveloperEntity[] developers)
+    {
         this.developers = developers;
-        this.price = price;
-        this.rating = rating;
-    }
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public void setDevelopers(DeveloperEntity[] developers) {
-        this.developers = developers;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 }
