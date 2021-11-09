@@ -29,16 +29,12 @@ public class SoftEntity extends Dictionary {
         this.languages = languages;
     }
 
-    public Dictionary[] getDevelopers() {
+    public DeveloperEntity[] getDevelopers() {
         return developers;
     }
 
-    public void setDevelopers(Dictionary[] developers) {
-        this.developers = developers;
-    }
-
     private Dictionary[] languages;
-    private Dictionary[] developers;
+    private DeveloperEntity[] developers;
 
     public SoftEntity() {
         super(0, "");
@@ -50,7 +46,7 @@ public class SoftEntity extends Dictionary {
     }
 
     public SoftEntity(int id, String name, Dictionary[] categories, Dictionary[] platforms,
-                      Dictionary[] languages, Dictionary[] developers) {
+                      Dictionary[] languages, DeveloperEntity[] developers) {
         super(id, name);
         this.platforms = platforms;
         this.categories = categories;
